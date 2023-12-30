@@ -97,7 +97,6 @@ int main()
 		for (int j = 0; j < tablica_size_x; j++)
 		{
 			cout << tablica1[i][j] << " ";
-
 		}
 		cout << endl;
 	}

@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void maneuvers(int size = 1, int rotation = 0, int col = 0, int row = 0);
+int maneuvers(int size = 1, int rotation = 0, int col = 0, int row = 0);
 
 char sign = '.';
 int columns, rows;
@@ -48,9 +48,9 @@ void print_shape(int size=1, int rotation=0, int col = 10, int row = 10)
 
 }
 
-void maneuvers(int size, int rotation, int col, int row) {
+int maneuvers(int size, int rotation, int col, int row) {
 
-    cout << "U¿ywaj ^ v < > aby poruszaæ figur¹, oraz + - aby zmieniæ jej rozmiar ";
+    cout << "U¿ywaj ^ v < > aby poruszaæ figur¹, oraz + - aby zmieniæ jej rozmiar. Naciœnij ESC aby zakoñczyæ dzia³anie programu ";
 
     int ch = _getch();
 
@@ -69,6 +69,9 @@ void maneuvers(int size, int rotation, int col, int row) {
         case 80:
             print_shape(size, 0, col, row+1);
             break;
+        case 27:
+            system("pause");
+            return 0;
         }
     }
     else if (ch == 43) {
